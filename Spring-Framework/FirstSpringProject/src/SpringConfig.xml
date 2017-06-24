@@ -4,5 +4,7 @@
  xsi:schemaLocation="http://www.springframework.org/schema/beans 
  http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="restaurantBean" class="org.gontuseries.springcore.Restaurant" />
+<bean id="restaurantBean" class="org.gontuseries.springcore.Restaurant">
+<property name="welcomeNote" value="Welcome To Our restaurant!!"></property>
+</bean>
 </beans>
