@@ -10,7 +10,7 @@ public class TestClass {
 		  																 //from our project to application context
 		  //Application context is a interface which simply reads the configuration of our project from xml file and then by 
 		  //calling different methods of it we access different functionalities provided by the spring framework like 
-		  //dependency injection,AOP,etc. In simpler words this the basic interface provided to access spring framework.
+		  //dependency injection,AOP,etc. In simpler words this is the basic interface provided to access spring framework.
 		  
 		  Restaurant restaurantObj = (Restaurant) context.getBean("restaurantBean"); //Here we are calling getBean method of 
 		  //application context interface just to request spring framework to create and return an object with a bean name 
