@@ -4,6 +4,7 @@
 <beans>
 
 	<bean id="triangle" class="org.laxman.spring.Triangle">
+		<property name="type" value="Equilateral" />
 	</bean>
 
 </beans>
