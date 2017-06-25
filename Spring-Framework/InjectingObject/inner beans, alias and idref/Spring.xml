@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="triangle" class="com.laxman.Triangle">
+		<property name="pointA"> 
+			<idref="zeroPoint" />		<!-- syntax for idref now it will search for id in reference, it is same as before but now reference is restricted to id only. -->
+		</property>
+		<property name="pointB">		<!--inner bean example it requires no ref -->
+			<bean class="com.laxman.Point"> <!-- now it doesn't require any id too -->
+				<property name="x" value="-28" />
+				<property name="y" value="0" />
+			</bean>
+		</property>
+		<property name="pointC" ref="pointTwo" />
+	</bean>
+	
+	<bean id="zeroPoint" class="com.laxman.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0"></property>
+	</bean>
+	
+	<bean id="pointTwo" class="com.laxman.Point">
+		<property name="x" value="0" />
+		<property name="y" value="16" />
+	</bean>
+	
+	<alias name="triangle" alias="triangle-alias"/>		<!-- syntax to create alias. Now triangle-alias can be used in place of triangle -->
+	
+</beans>
+<!-- When we call getBean method of application context interface just to request spring framework
+ to create and return an object with a bean name triangle here spring framework will search for this 
+ bean in the configuration(.xml) file and will implicitly create and return an object for the class 
+ mentioned with a bean name triangle.Then objects for pointA,b,C are created and return with their 
+ value set equal to the value given by their reference(ref) 
+ -->
