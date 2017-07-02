@@ -16,6 +16,7 @@ public class TestClass {
 		  //application context interface just to request spring framework to create and return an object with a bean name 
 		  //restaurantBean here spring framework will search for this bean in the configuration(.xml) file and will implicitly 
 		  //create and return an object for the class mentioned with a bean name restaurantBean.
+// 		    It assign the value "Welcome To Our restaurant!!" to welcomeNote of class Restaurant.
 		  
 		  restaurantObj.greetCustomer(); 
 		  context.close();
