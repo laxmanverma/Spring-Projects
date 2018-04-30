@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="triangle" class="com.laxman.Triangle" autowire="byName" >
+	</bean>
+	
+	<bean id="pointA" class="com.laxman.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0"></property>
+	</bean>
+	<bean id="pointB" class="com.laxman.Point">
+		<property name="x" value="-18" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointC" class="com.laxman.Point">
+		<property name="x" value="0" />
+		<property name="y" value="16" />
+	</bean>
+</beans>
+<!-- default is autowire off i.e., no autowiring is done
+	 autowire ="byName" looks for bean id with the same name as members of class Triangle
+	 
+	 autowire = "byType" looks for the type that is the class for which bean has been defined and
+	 if this class matches with the class in which member variables has been defined then it
+	 automatically does the wiring. Suitable for only one member variable.
+	 
+	 autowire = "constructor" same as byType but uses constructor for initialization. Suitable for 
+	 only one member variable.
+ -->

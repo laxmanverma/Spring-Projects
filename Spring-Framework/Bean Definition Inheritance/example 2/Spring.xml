@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	
+	<bean id="parenttriangle" class="com.laxman.Triangle" abstract="true"> <!-- we use abstract if we don't want to initialize our parent Bean and want it to be tamplate -->
+		<property name="points">
+			<list>
+				<ref bean="pointA" />
+			</list>
+		</property>
+	</bean>
+	<bean id="triangle" class="com.laxman.Triangle" parent="parenttriangle" >
+		<property name="points">
+			<list merge="true"> <!-- without merge pointB will overwrite pointA -->
+				<ref bean="pointB" />
+			</list>
+		</property>
+	</bean>
+	<bean id="triangle1" class="com.laxman.Triangle" parent="parenttriangle" >
+		<property name="pointB" ref="pointB" />
+	</bean>
+	
+	<bean id="pointA" class="com.laxman.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0"></property>
+	</bean>
+	<bean id="pointB" class="com.laxman.Point">
+		<property name="x" value="-18" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointC" class="com.laxman.Point">
+		<property name="x" value="0" />
+		<property name="y" value="16" />
+	</bean>
+</beans>

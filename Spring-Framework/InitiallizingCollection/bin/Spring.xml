@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="triangle" class="com.laxman.Triangle">
+		<property name="points">
+			<list>
+				<ref bean="zeroPoint" />
+				<ref bean="pointOne" />
+				<ref bean="pointTwo" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="zeroPoint" class="com.laxman.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0"></property>
+	</bean>
+	<bean id="pointOne" class="com.laxman.Point">
+		<property name="x" value="-28" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointTwo" class="com.laxman.Point">
+		<property name="x" value="0" />
+		<property name="y" value="16" />
+	</bean>
+</beans>
